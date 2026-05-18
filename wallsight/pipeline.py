@@ -85,7 +85,7 @@ if _USE_TASKS:
         seg_model = vision.ImageSegmenter.create_from_options(
             vision.ImageSegmenterOptions(
                 base_options=mp_tasks.BaseOptions(model_asset_path=str(_SEG_MODEL)),
-                running_mode=vision.RunningMode.VIDEO,
+                running_mode=vision.RunningMode.IMAGE,
                 output_confidence_masks=True,
                 output_category_mask=False,
             )
@@ -139,7 +139,7 @@ def process_frame(frame: np.ndarray):
         rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb)
         pose_out = pose_model.detect_for_video(mp_image, _video_ts)
-        seg_out = seg_model.segment_for_video(mp_image, _video_ts)
+        seg_out = seg_model.segment(mp_image)
 
         landmarks = (
             pose_out.pose_landmarks[0] if pose_out.pose_landmarks else None
