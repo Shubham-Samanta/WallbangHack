@@ -1,0 +1,6 @@
+venv/
+certs/*.pem
+models/*.task
+models/*.tflite
+__pycache__/
+*.pyc

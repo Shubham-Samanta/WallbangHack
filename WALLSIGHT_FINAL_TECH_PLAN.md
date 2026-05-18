@@ -91,9 +91,10 @@ tailscale up          # sign in with same account on all devices
 
 # Verify:
 tailscale status
-# mac-a   100.x.x.A   macOS   -
-# mac-b   100.x.x.B   macOS   -
-# iphone  100.x.x.C   iOS     -
+Role	Device	Tailscale IP
+Mac B — main server	sankalp-subham	100.70.15.111
+Mac A — camera only	shubhams-macbook-air	100.84.88.110
+iPhone — HUD viewer	iphone175	100.104.191.98
 ```
 
 Note your Mac B Tailscale IP — it's the only IP you need in any config file.

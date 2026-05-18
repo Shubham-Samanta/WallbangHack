@@ -1,0 +1,6 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/wallsight/venv/bin/python",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/wallsight/venv/lib/python3.14/site-packages"
+  ]
+}

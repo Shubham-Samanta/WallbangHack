@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>WallSight — Camera Node</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background:#000a14;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      height:100vh; font-family:monospace;
+    }
+    video {
+      width:280px; border-radius:8px;
+      opacity:0.6; border:1px solid #00ffcc22;
+    }
+    #status {
+      margin-top:16px; font-size:12px;
+      letter-spacing:2px; color:#00ffcc;
+    }
+    #cam-id {
+      margin-top:6px; font-size:10px;
+      color:#00ffcc44; letter-spacing:1px;
+    }
+    #dot {
+      display:inline-block; width:7px; height:7px;
+      border-radius:50%; background:#555;
+      margin-right:7px; vertical-align:middle;
+      transition: background 0.3s;
+    }
+    #dot.live  { background:#00ff88; }
+    #dot.retry { background:#ffaa00; }
+    #dot.error { background:#ff4444; }
+  </style>
+</head>
+<body>
+  <video id="preview" autoplay muted playsinline></video>
+  <div id="status"><span id="dot"></span><span id="label">initialising...</span></div>
+  <div id="cam-id"></div>
+  <script src="/static/camera.js"></script>
+</body>
+</html>
